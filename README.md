@@ -14,11 +14,11 @@ Data Loading
 
 Description automatically generated](Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.001.png)The dataset of images was obtained from [Kaggle](https://www.kaggle.com/datasets/warcoder/tyre-quality-classification/data) and contains 1854 tire images in various formats and sizes, these images come pre labeled as either defective (1028 images) or good (828 images). 
 
-![](https://github.com/wariormex/INFO-6147_FinalProject/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.002.png)After downloading the dataset, a dataframe containing the file name, file path, class name and the encoded class     index (defective: 0, good: 1) was generated. The dataframe then goes through a conversion to a DataSet object from pytorch with no transform beign applied to the images for visualization purposes and it finally receives the [expected image transformations for the ResNet architecture](https://pytorch.org/hub/pytorch_vision_resnet/).
+![](https://github.com/wariormex/INFO-6147_FinalProject/Images/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.002.png)After downloading the dataset, a dataframe containing the file name, file path, class name and the encoded class     index (defective: 0, good: 1) was generated. The dataframe then goes through a conversion to a DataSet object from pytorch with no transform beign applied to the images for visualization purposes and it finally receives the [expected image transformations for the ResNet architecture](https://pytorch.org/hub/pytorch_vision_resnet/).
 
 Data Exploration
 
-![](https://github.com/wariormex/INFO-6147_FinalProject/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.003.png)The images are transformed by converting to PIL image, resizing to 256, cropping the center of the image (224), converting to tensor, and applying the expected normalization for the ResNet network.
+![](https://github.com/wariormex/INFO-6147_FinalProject/Images/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.003.png)The images are transformed by converting to PIL image, resizing to 256, cropping the center of the image (224), converting to tensor, and applying the expected normalization for the ResNet network.
 
 Model Selection and Hyperparameters
 
@@ -26,13 +26,13 @@ For comparison purposes the [ResNet34 and Resnet152](https://pytorch.org/hub/pyt
 
 **Model Results**
 
-![](https://github.com/wariormex/INFO-6147_FinalProject/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.004.png)ResNet34
+![](https://github.com/wariormex/INFO-6147_FinalProject/Images/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.004.png)ResNet34
 
-![](https://github.com/wariormex/INFO-6147_FinalProject/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.005.png)The ResNet34 model achieved an 89.19% accuracy on its last validation epoch with a loss of 0.229. During testing this model achieved an overall accuracy of 91%, where f1 score achieved similar results between both classes, but the precision metric differed by 6 points (94% defective vs 88% good), suggesting that the class imbalance (defective > good) affected the model training.
+![](https://github.com/wariormex/INFO-6147_FinalProject/Images/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.005.png)The ResNet34 model achieved an 89.19% accuracy on its last validation epoch with a loss of 0.229. During testing this model achieved an overall accuracy of 91%, where f1 score achieved similar results between both classes, but the precision metric differed by 6 points (94% defective vs 88% good), suggesting that the class imbalance (defective > good) affected the model training.
 
-![](https://github.com/wariormex/INFO-6147_FinalProject/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.006.png)ResNet152
+![](https://github.com/wariormex/INFO-6147_FinalProject/Images/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.006.png)ResNet152
 
-![](https://github.com/wariormex/INFO-6147_FinalProject/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.007.png)The ResNet152 model achieved a 91.89% accuracy on its last validation epoch with a loss of 0.1939. During testing this model achieved an overall accuracy of 94%, where f1 score also achieved similar results between both classes, the precision metric difference between classes increased to 98% defective vs 89% good, suggesting that the imbalance class theory has some merit to it.
+![](https://github.com/wariormex/INFO-6147_FinalProject/Images/Aspose.Words.68e0356d-aa9e-4e1f-bbc0-d2d151ba354e.007.png)The ResNet152 model achieved a 91.89% accuracy on its last validation epoch with a loss of 0.1939. During testing this model achieved an overall accuracy of 94%, where f1 score also achieved similar results between both classes, the precision metric difference between classes increased to 98% defective vs 89% good, suggesting that the imbalance class theory has some merit to it.
 
 **Conclusions**
 
